@@ -9,7 +9,6 @@ export default class GuessNumber {
         this.#number = this.#getRandomIntInclusive(0, 360);
         this.#tries = 0;
         GuessNumber.TOTAL_TRIES = tries;
-        console.log(this.#number);
     }
     #getRandomIntInclusive(min, max) {
         min = Math.ceil(min);

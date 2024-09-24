@@ -14,13 +14,13 @@
 <body>
     <main class="container-sm" style="width: 300px;">
         <h1 class="text-center">Angle</h1>
-        <canvas width="200" height="200"></canvas>
-        <form class="row gx-5">
-            <input type="number" id="n" class="form-control col" focus="focus">
-            <input type="button" value="Guess!" class="btn btn-primary col">
+        <div class="d-flex justify-content-center"><canvas width="200" height="200"></canvas></div>
+        <form class="row my-3">
+            <div class="col-sm-8"><input type="number" id="n" class="form-control" autofocus="autofocus"></div>
+            <div class="col-sm-2"><input type="button" value="Guess!" class="btn btn-primary"></div>
         </form>
-        <p>Attempts: <span id="tries"></span>/<span id="totalTries"></span></p>
-        <table>
+        <p class="text-center">Attempts: <span id="tries"></span>/<span id="totalTries"></span></p>
+        <table class="table">
             <tbody></tbody>
         </table>
     </main>
