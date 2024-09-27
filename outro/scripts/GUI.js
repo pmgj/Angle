@@ -13,25 +13,38 @@ class GUI {
     createAngle() {
         const canvas = document.querySelector("canvas");
         const ctx = canvas.getContext("2d");
+        let width = canvas.width / 2, height = canvas.height / 2, radius = 35;
+
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         let angle = this.game.getNumber() * Math.PI / 180;
+
+        ctx.lineWidth = 5;
+
         ctx.beginPath();
-        ctx.moveTo(100, 100);
-        ctx.lineTo(100 + 70 * Math.cos(angle), 100 + 70 * Math.sin(angle));
+        ctx.strokeStyle = "black";
+        ctx.arc(width, height, 1, 0, 2 * Math.PI, false);
+        ctx.stroke();
+        ctx.closePath();
+
+        ctx.lineWidth = 2;
+
+        ctx.beginPath();
+        ctx.moveTo(width, height);
+        ctx.lineTo(width + radius * Math.cos(angle), height + radius * Math.sin(angle));
         ctx.strokeStyle = "black";
         ctx.stroke();
         ctx.closePath();
 
         ctx.beginPath();
-        ctx.moveTo(100, 100);
-        ctx.lineTo(170, 100);
+        ctx.moveTo(width, height);
+        ctx.lineTo(width + radius, height);
         ctx.strokeStyle = "black";
         ctx.stroke();
         ctx.closePath();
 
         ctx.beginPath();
         ctx.strokeStyle = "red";
-        ctx.arc(100, 100, 30, 0, angle, false);
+        ctx.arc(width, height, radius, 0, angle, false);
         ctx.stroke();
         ctx.closePath();
     }
